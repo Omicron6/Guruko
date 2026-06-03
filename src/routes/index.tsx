@@ -7,7 +7,7 @@ import {
   Headphones, Youtube, Tv, Zap, Volume2, Waves,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/guruko-logo.png.asset.json";
+import { GurukoLogo } from "@/components/guruko-logo";
 import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -97,7 +97,7 @@ function Nav() {
         <div className="flex items-center justify-between px-4 md:px-6 py-2.5">
           <Link to="/" className="flex items-center gap-2.5 group">
             <div className="relative">
-              <img src={logo.url} alt="Guruko" className="w-9 h-9 object-contain relative z-10" />
+              <GurukoLogo className="w-9 h-9 relative z-10" />
               <div className="absolute inset-0 bg-soft-purple/30 blur-xl group-hover:bg-soft-purple/60 transition-all" />
             </div>
             <span className="flex flex-col leading-none">
@@ -1478,7 +1478,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10">
         <div>
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo.url} alt="Guruko" className="w-9 h-9 object-contain" />
+            <GurukoLogo className="w-9 h-9" />
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-teal">Guruko</span>
               <span className="text-[9px] font-medium text-soft-purple mt-0.5 tracking-[0.12em] uppercase">AI Classroom Agent</span>
