@@ -3,6 +3,6 @@ services:
     name: guruko
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm install && npm run build
     startCommand: node dist/server/server.js
     autoDeploy: true
