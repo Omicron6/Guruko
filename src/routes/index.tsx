@@ -96,10 +96,7 @@ function Nav() {
       >
         <div className="flex items-center justify-between px-4 md:px-6 py-2.5">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="relative">
-              <GurukoLogo className="w-9 h-9 relative z-10" />
-              <div className="absolute inset-0 bg-soft-purple/30 blur-xl group-hover:bg-soft-purple/60 transition-all" />
-            </div>
+            <GurukoLogo size="md" className="relative z-10" />
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-base text-teal">Guruko</span>
               <span className="text-[9px] font-medium text-soft-purple mt-0.5 tracking-[0.12em] uppercase">AI Classroom Agent</span>
@@ -713,7 +710,7 @@ function BridgeIntro() {
           transition={{ duration: 0.7 }}
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 backdrop-blur border border-border/50 text-xs font-medium text-indigo">
-            <Sparkles className="w-3.5 h-3.5" /> Introducing Guruko
+            <GurukoLogo size="xs" className="w-6 h-6" /> Introducing Guruko
           </span>
           <h2 className="mt-6 text-4xl md:text-6xl font-bold leading-[1.03] tracking-[-0.02em]">
             Helping teachers <span className="text-gradient">evolve</span> with the modern classroom.
@@ -1478,7 +1475,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10">
         <div>
           <Link to="/" className="flex items-center gap-2.5">
-            <GurukoLogo className="w-9 h-9" />
+            <GurukoLogo size="md" />
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-teal">Guruko</span>
               <span className="text-[9px] font-medium text-soft-purple mt-0.5 tracking-[0.12em] uppercase">AI Classroom Agent</span>

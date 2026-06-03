@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Zap, Sparkles, Play, NotebookPen, TrendingUp, Users, Clock } from "lucide-react";
+import { GurukoLogo } from "@/components/guruko-logo";
 
 export const Route = createFileRoute("/app/")({
   component: Home,
@@ -15,10 +16,13 @@ function Home() {
   }, []);
   return (
     <div className="p-6 lg:p-10 space-y-8">
-      <header>
+      <header className="flex items-start gap-4">
+        <GurukoLogo size="lg" className="mt-1" />
+        <div>
         <p className="text-sm text-muted-foreground">{greet},</p>
         <h1 className="text-3xl md:text-4xl font-bold mt-1">Ms. Priya 👋</h1>
         <p className="text-muted-foreground mt-2">Your classroom awaits. Let's make today memorable.</p>
+        </div>
       </header>
 
       <section>

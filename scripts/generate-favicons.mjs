@@ -1,14 +1,14 @@
 /**
- * Regenerate favicons from public/guruko-logo.png:
+ * Regenerate favicons from src/assets/guruko-logo.png (also copies to public/):
  *   npx --yes sharp to-ico && node ./scripts/generate-favicons.mjs
  */
-import { readFile, writeFile } from "node:fs/promises";
+import { copyFile, readFile, writeFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(root, "public");
-const logoPath = join(publicDir, "guruko-logo.png");
+const logoPath = join(root, "src", "assets", "guruko-logo.png");
 
 async function main() {
   const sharp = (await import("sharp")).default;
@@ -36,8 +36,9 @@ async function main() {
   const png32 = await resize(32).toBuffer();
   const ico = await toIco([png16, png32]);
   await writeFile(join(publicDir, "favicon.ico"), ico);
+  await copyFile(logoPath, join(publicDir, "guruko-logo.png"));
 
-  console.log("Generated favicon PNG/ICO assets from guruko-logo.png");
+  console.log("Generated favicon PNG/ICO assets from src/assets/guruko-logo.png");
 }
 
 main().catch((err) => {

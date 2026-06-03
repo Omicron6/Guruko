@@ -3,7 +3,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, ArrowLeft, Sparkles, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check } from "lucide-react";
+import { GurukoLogo } from "@/components/guruko-logo";
 
 export const Route = createFileRoute("/app/quick-start")({
   component: QuickStart,
@@ -118,8 +119,12 @@ function Picker({ title, subtitle, field, data, setData, options }: any) {
 function Generate({ data }: any) {
   return (
     <div className="text-center py-8">
-      <motion.div animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-20 h-20 rounded-3xl gradient-hero mx-auto flex items-center justify-center shadow-glow">
-        <Sparkles className="w-10 h-10 text-white" />
+      <motion.div
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="mx-auto"
+      >
+        <GurukoLogo size="2xl" />
       </motion.div>
       <h2 className="mt-6 text-2xl font-bold">Ready to create something beautiful?</h2>
       <p className="mt-2 text-muted-foreground">I'll design a {data.topic || "topic"} experience for {data.grade || "your class"} — energy-matched, infrastructure-aware, goal-aligned.</p>

@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Mic, AlertCircle, Globe, Sparkles, Pause, Play, Headphones } from "lucide-react";
+import { Mic, AlertCircle, Globe, Pause, Play, Headphones } from "lucide-react";
+import { GurukoLogo } from "@/components/guruko-logo";
 
 export const Route = createFileRoute("/app/live")({
   component: Live,
@@ -87,8 +88,8 @@ function Live() {
 
         <div className="space-y-4">
           <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 3, repeat: Infinity }} className="rounded-3xl gradient-hero p-5 text-white shadow-glow">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
+            <div className="flex items-center gap-2.5">
+              <GurukoLogo size="xs" className="w-8 h-8" />
               <p className="font-semibold">Guruko</p>
             </div>
             <p className="mt-2 text-sm text-white/90">Class energy is shifting — try standing and walking to the back row in 3 minutes.</p>

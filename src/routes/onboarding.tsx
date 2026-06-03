@@ -30,7 +30,7 @@ function Onboarding() {
     <div className="min-h-screen gradient-soft flex flex-col">
       <header className="px-6 py-5 flex items-center justify-between max-w-3xl mx-auto w-full">
         <Link to="/" className="flex items-center gap-2">
-          <GurukoLogo className="w-9 h-9" />
+          <GurukoLogo size="sm" />
           <span className="flex flex-col leading-none">
             <span className="font-display font-bold text-teal">Guruko</span>
             <span className="text-[10px] font-medium text-soft-purple mt-0.5 tracking-wide">AI Classroom Agent</span>
@@ -85,8 +85,12 @@ function Onboarding() {
 function Welcome() {
   return (
     <div className="text-center">
-      <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-20 h-20 rounded-3xl gradient-hero mx-auto flex items-center justify-center shadow-glow">
-        <GurukoLogo className="w-12 h-12" />
+      <motion.div
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="mx-auto"
+      >
+        <GurukoLogo size="hero" />
       </motion.div>
       <h1 className="mt-8 text-4xl md:text-5xl font-bold">Welcome to Guruko.</h1>
       <p className="mt-4 text-lg text-muted-foreground">Let's set up your teaching world. Takes under a minute.</p>
