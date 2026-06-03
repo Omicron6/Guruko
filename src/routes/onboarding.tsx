@@ -86,7 +86,7 @@ function Welcome() {
   return (
     <div className="text-center">
       <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-20 h-20 rounded-3xl gradient-hero mx-auto flex items-center justify-center shadow-glow">
-        <GurukoLogo variant="light" className="w-12 h-12" />
+        <GurukoLogo className="w-12 h-12" />
       </motion.div>
       <h1 className="mt-8 text-4xl md:text-5xl font-bold">Welcome to Guruko.</h1>
       <p className="mt-4 text-lg text-muted-foreground">Let's set up your teaching world. Takes under a minute.</p>

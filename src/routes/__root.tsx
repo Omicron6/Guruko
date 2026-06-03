@@ -83,9 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Guruko — AI Classroom Agent" },
       { property: "og:description", content: "Guruko — AI classroom assistant for teachers in India" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "/guruko-logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Guruko" },
-      { name: "theme-color", content: "#0d7a7c" },
+      { name: "twitter:image", content: "/guruko-logo.png" },
+      { name: "theme-color", content: "#008080" },
       { name: "apple-mobile-web-app-title", content: "Guruko" },
     ],
     links: [
@@ -97,11 +99,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "icon",
         href: "/favicon.ico",
         sizes: "32x32",
-      },
-      {
-        rel: "icon",
-        href: "/favicon.svg",
-        type: "image/svg+xml",
       },
       {
         rel: "icon",

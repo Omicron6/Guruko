@@ -1,5 +1,5 @@
 /**
- * Regenerate PNG/ICO from public/favicon.svg (one-time setup):
+ * Regenerate favicons from public/guruko-logo.png:
  *   npx --yes sharp to-ico && node ./scripts/generate-favicons.mjs
  */
 import { readFile, writeFile } from "node:fs/promises";
@@ -8,12 +8,17 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(root, "public");
-const svgPath = join(publicDir, "favicon.svg");
+const logoPath = join(publicDir, "guruko-logo.png");
 
 async function main() {
   const sharp = (await import("sharp")).default;
   const toIco = (await import("to-ico")).default;
-  const svg = await readFile(svgPath);
+  const logo = await readFile(logoPath);
+
+  const resize = (size) =>
+    sharp(logo)
+      .resize(size, size, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png();
 
   const sizes = [
     ["favicon-16x16.png", 16],
@@ -24,15 +29,15 @@ async function main() {
   ];
 
   for (const [name, size] of sizes) {
-    await sharp(svg).resize(size, size).png().toFile(join(publicDir, name));
+    await resize(size).toFile(join(publicDir, name));
   }
 
-  const png16 = await sharp(svg).resize(16, 16).png().toBuffer();
-  const png32 = await sharp(svg).resize(32, 32).png().toBuffer();
+  const png16 = await resize(16).toBuffer();
+  const png32 = await resize(32).toBuffer();
   const ico = await toIco([png16, png32]);
   await writeFile(join(publicDir, "favicon.ico"), ico);
 
-  console.log("Generated favicon PNG/ICO assets in public/");
+  console.log("Generated favicon PNG/ICO assets from guruko-logo.png");
 }
 
 main().catch((err) => {
