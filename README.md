@@ -34,7 +34,7 @@ Classroom dynamics change minute-to-minute. AI enables fast, contextual adaptati
 
 - Frontend: React, TypeScript, Tailwind CSS (PWA-ready)
 - Server: scaffolded server functions (add your backend as needed)
-- Deploy: static build via Vite (`npm run build`) — recommended hosts: Vercel, Netlify, Cloudflare Pages
+- Deploy: Vercel via Nitro (`npm run build` → `.vercel/output`); optional static export with `npm run build:static`
 
 ## Quick start
 
@@ -61,11 +61,33 @@ npm run build
 npm run preview
 ```
 
-## Deploy
+## Deploy (Vercel)
 
-Recommended: Vercel — connect your GitHub repository, set the build command to `npm run build`, and the output directory to `dist`.
+This app uses TanStack Start with Nitro’s **Vercel** preset. `npm run build` produces `.vercel/output` (SSR + static assets).
 
-Static hosts like Netlify or Cloudflare Pages also work for a frontend-only deployment.
+### Option A — GitHub (recommended)
+
+1. Push this repo to GitHub.
+2. Sign in at [vercel.com](https://vercel.com) → **Add New** → **Project** → import the repo.
+3. Vercel should detect settings from `vercel.json`:
+   - **Build Command:** `npm run build`
+   - **Install Command:** `npm install`
+   - **Framework Preset:** Other (no framework)
+4. Click **Deploy**. Each push to `main` can auto-deploy if Git integration is enabled.
+
+### Option B — Vercel CLI
+
+```bash
+npm install
+npm run build
+npx vercel login
+npx vercel link    # pick your team and project (or create one)
+npx vercel deploy --prebuilt --prod
+```
+
+### Static-only build (optional)
+
+For hosts that only serve files (no SSR): `npm run build:static` and publish the `dist` folder.
 
 ## Notes
 

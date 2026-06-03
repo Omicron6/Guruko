@@ -11,7 +11,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node ./scripts/merge-dist.mjs",
+    "build": "vite build",
+    "build:static": "vite build && node ./scripts/merge-dist.mjs",
     "start": "node dist/server/server.js",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",

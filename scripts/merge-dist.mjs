@@ -25,8 +25,22 @@ async function main() {
     // Remove the now-empty client folder (and optionally server if present)
     await rm(clientDir, { recursive: true, force: true });
 
-    // Inject a small resilient loader into index.html so static hosts don't show a blank page
+    // Ensure a root index exists for hosts that serve `dist/` directly.
     const indexPath = join(rootDist, 'index.html');
+    const clientIndexPath = join(clientDir, 'index.html');
+    try {
+      await readFile(indexPath, { encoding: 'utf8' });
+    } catch {
+      try {
+        const clientIndex = await readFile(clientIndexPath, { encoding: 'utf8' });
+        await writeFile(indexPath, clientIndex, { encoding: 'utf8' });
+      } catch {
+        console.warn('Could not locate an index.html in dist/ or dist/client/; skipping loader injection.');
+        return;
+      }
+    }
+
+    // Inject a small resilient loader into index.html so static hosts don't show a blank page
     try {
       let html = await readFile(indexPath, { encoding: 'utf8' });
       const moduleMatch = html.match(/<script[^>]*type=["']module["'][^>]*src=["']([^"']+)["'][^>]*>\s*<\/script>/i);
