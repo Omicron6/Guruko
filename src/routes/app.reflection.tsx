@@ -65,7 +65,7 @@ function Reflection() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-3xl gradient-hero p-6 text-white shadow-soft">
           <div className="flex items-center gap-2.5 mb-3">
-            <GurukoLogo size="xs" className="w-8 h-8" />
+            <GurukoLogo className="w-8 h-8" />
             <p className="font-semibold">Guruko's note</p>
           </div>
           <p className="text-white/90">Your engagement was 12 points higher when you used real-life analogies. Tomorrow's photosynthesis class is already set up to lean on this strength.</p>

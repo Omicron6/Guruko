@@ -26,7 +26,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Mobile top bar */}
       <div className="lg:hidden fixed top-0 inset-x-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50 px-4 py-3 flex items-center justify-between">
         <Link to="/app" className="flex items-center gap-2">
-          <GurukoLogo size="sm" />
+          <GurukoLogo className="w-9 h-9" />
           <span className="flex flex-col leading-none">
             <span className="font-display font-bold text-teal">Guruko</span>
             <span className="text-[9px] font-medium text-soft-purple mt-0.5 tracking-wide">AI Classroom Agent</span>
@@ -69,7 +69,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
       <Link to="/app" className="flex items-center gap-2 px-3 py-2 mb-6">
-        <GurukoLogo size="md" />
+        <GurukoLogo className="w-10 h-10" />
         <div>
           <p className="font-display font-bold leading-none text-teal">Guruko</p>
           <p className="text-[10px] font-medium text-soft-purple mt-1 tracking-wide">AI Classroom Agent</p>

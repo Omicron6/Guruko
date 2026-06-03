@@ -89,7 +89,7 @@ function Live() {
         <div className="space-y-4">
           <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 3, repeat: Infinity }} className="rounded-3xl gradient-hero p-5 text-white shadow-glow">
             <div className="flex items-center gap-2.5">
-              <GurukoLogo size="xs" className="w-8 h-8" />
+              <GurukoLogo className="w-8 h-8" />
               <p className="font-semibold">Guruko</p>
             </div>
             <p className="mt-2 text-sm text-white/90">Class energy is shifting — try standing and walking to the back row in 3 minutes.</p>

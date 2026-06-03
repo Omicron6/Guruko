@@ -124,7 +124,7 @@ function Generate({ data }: any) {
         transition={{ duration: 2, repeat: Infinity }}
         className="mx-auto"
       >
-        <GurukoLogo size="2xl" />
+        <GurukoLogo className="w-20 h-20" />
       </motion.div>
       <h2 className="mt-6 text-2xl font-bold">Ready to create something beautiful?</h2>
       <p className="mt-2 text-muted-foreground">I'll design a {data.topic || "topic"} experience for {data.grade || "your class"} — energy-matched, infrastructure-aware, goal-aligned.</p>

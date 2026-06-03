@@ -17,7 +17,7 @@ function Home() {
   return (
     <div className="p-6 lg:p-10 space-y-8">
       <header className="flex items-start gap-4">
-        <GurukoLogo size="lg" className="mt-1" />
+        <GurukoLogo className="w-12 h-12 mt-1" />
         <div>
         <p className="text-sm text-muted-foreground">{greet},</p>
         <h1 className="text-3xl md:text-4xl font-bold mt-1">Ms. Priya 👋</h1>
