@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, ArrowLeft, Sparkles, Check } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { GurukoLogo } from "@/components/guruko-logo";
 
 export const Route = createFileRoute("/onboarding")({
